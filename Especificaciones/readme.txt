@@ -10,3 +10,7 @@ Con 100 eventos por archivo
 Creado 120 archivos por particula.
 
 De tal forma que se espera crear 360 archivos MAC
+
+ 
+Utilizar el scripts en Python endentro de la carpeta "Crear_MAC", para generar los arcbivos MAC esperados.
+Leer el readme de como usar utilizar esta rutina
