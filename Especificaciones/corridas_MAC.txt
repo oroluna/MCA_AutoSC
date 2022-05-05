@@ -1,0 +1,4 @@
+Es este archivo se define la cantidad de iteraciones que requiere procesar por cada simulacion.
+
+Para este ejericio la cantidad de arvhivos a generar por particula - Energia - Posicion son de 120 archivos.  
+Es decir 326 archivos MAC que se utilizaran de insumo para crear 360 archivos de simulación utilizando la herramienta de WCSim
