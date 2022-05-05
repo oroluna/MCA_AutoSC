@@ -15,11 +15,12 @@ De tal forma que se espera crear 360 archivos MAC
 Utilizar el scripts en Python dentro de la carpeta "Crear_MAC", para generar los arcbivos MAC esperados.
 
 
-Propiedades a utilizar ejemplo:
+Propiedades a utilizar de ejemplo al crear los archivos MAC:
 
 name: mu-,
 specification: "MCA",
 energy: "MeV":"500"
+simulations: "100"
 
 Leer el readme de como usar utilizar esta rutina
 
