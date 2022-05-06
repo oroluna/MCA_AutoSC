@@ -33,7 +33,7 @@ Se espera de salida un archivo .NPZ
 Se tomara como entrada un archivo .NPZ  
 Se espera de salida un archivo .NPZ  (con formato de imagen)  
 
-Sintaxis requerida para su ejecución:
+**Sintaxis requerida para su ejecución:**
 
    python3 npz_to_images.py -m <geometry-file-npy> [-f <target-npz-file> | -d <target-directory with npz files>]
 
