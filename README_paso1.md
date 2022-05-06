@@ -29,17 +29,17 @@ Se espera de salida un archivo .NPZ
 ---  
 
 ### En el proceso 6, utilizar rutina en Python "npz_to_images.py":
-(F)  
+(F-ok)  
 Se tomara como entrada un archivo .NPZ  
 Se espera de salida un archivo .NPZ  (con formato de imagen)  
 
 Sintaxis requerida para su ejecución:
+
    python3 npz_to_images.py -m <geometry-file-npy> [-f <target-npz-file> | -d <target-directory with npz files>]
 
-time python3 /lustre/home/forozco/HKM/do_ML/ML_01/3_Scripts/npz_to_image.py -m /lustre/home/forozco/HKM/do_ML/ML_00/2_Data/5_Geometries/IWCD_geometry_mPMT.npy -d /lustre/home/forozco/HKM/do_ML/ML_01/2_Data/2_Analysis/Event_Dump/mu-/
-  
-
-python3 /MCA_AutoSC/scripts/python/npz_to_images.py 
+**Ejemplo:** 
+   
+time python3 /MCA_AutoSC/scripts/python/npz_to_images.py 
    -m MCA_AutoSC/data/Geometries/IWCD_geometry_mPMT.npy 
    -f MCA_AutoSC/data/in_out_demos/<Nombre_archivo.npz>
 
