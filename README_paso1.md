@@ -1,7 +1,7 @@
 # MCA_AutoSC
 Automatizacíon utilizando supercomputo
 
-Instrucciones y ejemplos de ayuda para probar el funcionamiento de las cajas negras (rutinas en python, aplicaciones, contenedores), y verificar que se generan correctamente las salidas em base a sus entradas
+Instrucciones y ejemplos de ayuda para probar el funcionamiento de las cajas negras (rutinas en python, aplicaciones, contenedores), y verificar que se generan correctamente las salidas en base a sus entradas
 
 
 
