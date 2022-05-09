@@ -10,8 +10,9 @@ Instrucciones y ejemplos de ayuda para probar el funcionamiento de las cajas neg
 En el Proceso 3 utilizar el siguiente comando  
 (Es necesario revisar la documentación correspondiente)  
 
+```
 python3 mac_files_config.py -i 100 -d ../data/in_out_demos  
-
+``` 
 ---  
 Para los procesos 4, 5 y 8 descargar la imágen WCSim de Docker Hub:
 
