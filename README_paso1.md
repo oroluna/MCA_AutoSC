@@ -27,6 +27,15 @@ Para los procesos 4, 5 y 8 descargar la imágen WCSim de Docker Hub:
 Se tomara como entrada un archivo .MAC  
 Se espera de salida un archivo .ROOT  
 
+Ruta de la carpeta a vincular con los archivos .mac: MCA_AutoSC-main/data/in_out_demos
+
+Creación del contenedor y vinculacion de la carpeta:
+
+```
+sudo docker run -v < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos:/home/neutrino/in_out_demos -d 
+-it --name=WCSim manu33/wcsim:1.2 
+```
+
 ---  
 
 ### En el proceso 5, utilizar el contenedor de WCSim y mandar llamar la rutina en python dentro del contenedor:
