@@ -18,6 +18,7 @@ Para los procesos 4, 5 y 8 descargar la imágen WCSim de Docker Hub:
 ```
  sudo docker pull manu33/wcsim:1.2
 ```
+---
 
 ### En el proceso 4, para utilizar el contenedor para ejecutar herramienta WCSim:
 (M)
