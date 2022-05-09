@@ -27,7 +27,8 @@ Para los procesos 4, 5 y 8 descargar la imágen WCSim de [Docker Hub](https://hu
 Se tomara como entrada un archivo .MAC  
 Se espera de salida un archivo .ROOT  
 
-Ruta de la carpeta a vincular con los archivos .mac: MCA_AutoSC-main/data/in_out_demos
+Ruta de la carpeta a vincular con los archivos .mac: 
+* MCA_AutoSC-main/data/in_out_demos
 
 Creación del contenedor y vinculacion de la carpeta:
 
