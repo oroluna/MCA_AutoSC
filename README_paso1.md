@@ -3,6 +3,8 @@ Automatización utilizando supercómputo
 
 Instrucciones y ejemplos de ayuda para probar el funcionamiento de las cajas negras (rutinas en python, aplicaciones, contenedores), y verificar que se generan correctamente las salidas en base a sus entradas.
 
+Descargar el ZIP del repositorio de GitHub.
+
 ---  
 
 ## Ejemplo de procesamiento indivuales de 
