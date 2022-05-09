@@ -36,14 +36,6 @@ Y aparecerá algo como:
 
 ![images](/Imagenes/sudoDockerImages.png "sudoDockerImages")
 
----
-
-### En el proceso 4, para utilizar el contenedor para ejecutar herramienta WCSim:
-(M)
-
-Se tomara como entrada un archivo .MAC  
-Se espera de salida un archivo .ROOT  
-
 Ruta de la carpeta a vincular con los archivos .mac: 
 * MCA_AutoSC-main/data/in_out_demos
 
@@ -52,6 +44,21 @@ Creación del contenedor y vinculacion de la carpeta:
 ```
 sudo docker run -v < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos:/home/neutrino/in_out_demos -d -it --name=WCSim manu33/wcsim:1.2 
 ```
+---
+
+### En el proceso 4, para utilizar el contenedor para ejecutar herramienta WCSim:
+(M)
+
+Se tomara como entrada un archivo .MAC  
+Se espera de salida un archivo .ROOT  
+
+Ejecución WCSim:
+
+Cambiar el archivo.mac y archivo.root por su nombre correspondiente, por ejemplo: wcs_MCA_e-__0_500_MeV.mac
+```
+sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; cd $SOFTWARE/WCSim_build; ./WCSim /home/neutrino/in_out_demos/<archivo>.mac; mv /home/neutrino/software/WCSim_build/<archivo>.root /home/neutrino/in_out_demos"
+```
+Visualizar archivo .root en la siguiente ruta: < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos
 
 ---  
 
