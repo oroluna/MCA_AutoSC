@@ -14,7 +14,7 @@ En el Proceso 3 utilizar el siguiente comando
 python3 mac_files_config.py -i 100 -d ../data/in_out_demos  
 ``` 
 ---  
-Para los procesos 4, 5 y 8 descargar la imágen WCSim de Docker Hub:
+Para los procesos 4, 5 y 8 descargar la imágen WCSim de [Docker Hub](https://hub.docker.com/r/manu33/wcsim "manu33/wcsim"):
 
 ```
  sudo docker pull manu33/wcsim:1.2
@@ -32,8 +32,7 @@ Ruta de la carpeta a vincular con los archivos .mac: MCA_AutoSC-main/data/in_out
 Creación del contenedor y vinculacion de la carpeta:
 
 ```
-sudo docker run -v < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos:/home/neutrino/in_out_demos -d 
--it --name=WCSim manu33/wcsim:1.2 
+sudo docker run -v < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos:/home/neutrino/in_out_demos -d -it --name=WCSim manu33/wcsim:1.2 
 ```
 
 ---  
