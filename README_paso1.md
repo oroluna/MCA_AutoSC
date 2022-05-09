@@ -16,6 +16,13 @@ python3 mac_files_config.py -i 100 -d ../data/in_out_demos
 ---  
 Para los procesos 4, 5 y 8 descargar la imágen WCSim de [Docker Hub](https://hub.docker.com/r/manu33/wcsim "manu33/wcsim"):
 
+1.- Se debe tener una cuenta en Docker Hub: https://hub.docker.com/
+
+2.- Loggearte en consola 
+```
+ sudo docker login
+```
+3.- Descargar la imagen WCSim:
 ```
  sudo docker pull manu33/wcsim:1.2
 ```
