@@ -13,9 +13,15 @@ En el Proceso 3 utilizar el siguiente comando
 python3 mac_files_config.py -i 100 -d ../data/in_out_demos  
 
 ---  
+Para los procesos 4, 5 y 8 descargar la imágen WCSim de Docker Hub:
+
+```
+ sudo docker pull manu33/wcsim:1.2
+```
 
 ### En el proceso 4, para utilizar el contenedor para ejecutar herramienta WCSim:
 (M)
+
 Se tomara como entrada un archivo .MAC  
 Se espera de salida un archivo .ROOT  
 
