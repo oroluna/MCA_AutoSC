@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Para la ejecución del script, cambiar la ruta de la linea 5, 8, 9, 10 a la ruta de la máquina local.
+
 cd /home/autosc/Documents/MCA_AutoSC-main/Crear_MAC
 
 echo "Eliminando archivos .mac anteriores..."
