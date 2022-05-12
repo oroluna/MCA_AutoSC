@@ -97,7 +97,7 @@ Ubicación del archivo de geometria:  MCA_AutoSC/data/Geometries/
 
 ---  
 
-### En el proceso 7, para utilizar el contenedor es:  
+###  En el proceso 7, el archivo generado en NPZ, se puede visualizar con un scripts de Jupyter-Notebook, dentro del script se debe espeficar la ruta de un archivo seleccionado al azar, para visualizar su contenido.
 (F) 
 Se tomara como entrada un archivo .NPZ  
 Se espera de salida un archivo .ipynb  (Jupyter Notebook)  
