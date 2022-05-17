@@ -102,7 +102,10 @@ Ubicación del archivo de geometria:  MCA_AutoSC/data/Geometries/
 Se tomara como entrada un archivo .NPZ  
 Se espera de salida un archivo .ipynb  (Jupyter Notebook)  
 
-MCA_AutoSC/scripts/notebook/  
+ Ubicación de los notebooks
+MCA_AutoSC/scripts/notebook/Analisis_mu-.ipynb  
+MCA_AutoSC/scripts/notebook/Analisis_gamma.ipynb  
+MCA_AutoSC/scripts/notebook/Analisis_e-.ipynb  
 
 ---  
 
