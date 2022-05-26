@@ -1,0 +1,126 @@
+CORRIDA = range(0,3)
+#PARTICULA = ["gamma"]
+PARTICULA = ["e-", "gamma", "mu-"]
+#container: "docker://manu33/wcsim:1.2"
+
+rule all:
+   input:
+      expand('../../data/1_MAC/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.mac', l_corrida=CORRIDA),
+      expand('../../data/2_ROOT/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
+      expand('../../data/1_MAC/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.mac', l_corrida=CORRIDA),
+      expand('../../data/2_ROOT/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
+      expand('../../data/1_MAC/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.mac', l_corrida=CORRIDA),
+      expand('../../data/2_ROOT/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
+      expand('../../data/2_ROOT/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
+      expand('../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA)
+
+
+# Con respecto a VaryE
+rule MAC_to_ROOT_e:
+   input:
+      '../../data/1_MAC/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.mac'
+   output:
+      '../../data/2_ROOT/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root'
+   params:
+      ruta = '../../data/1_MAC/VaryE/e-/',
+      i = '/home/shared-folder/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.mac',
+      m = 'wcs_MCA_e-__{l_corrida}_500_MeV.mac',
+      r = 'wcs_MCA_e-__{l_corrida}_500_MeV.root'
+
+   group: "mygroup"
+
+   shell:
+    """
+       sudo docker exec -it WCSim_e bash -c "cd /home/neutrino/software; source run.sh; cd /home/neutrino/software/WCSim_build; ./WCSim /home/neutrino/in_out_demos/{params.m}; mv /home/neutrino/software/WCSim_build/{params.r} /home/neutrino/in_out_demos/"
+       mv {params.ruta}{params.r}  {output}
+       sudo chmod 666 {output}
+    """
+
+# Con respecto a VaryE
+rule MAC_to_ROOT_mu:
+   input:
+      '../../data/1_MAC/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.mac'
+   output:
+      '../../data/2_ROOT/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.root'
+   params:
+      ruta = '../../data/1_MAC/VaryE/mu-/',
+      i = '/home/shared-folder/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.mac',
+      m = 'wcs_MCA_mu-__{l_corrida}_500_MeV.mac',
+      r = 'wcs_MCA_mu-__{l_corrida}_500_MeV.root'
+
+   group: "mygroup"
+
+   shell:
+    """
+       sudo docker exec -it WCSim_m bash -c "cd /home/neutrino/software; source run.sh; cd /home/neutrino/software/WCSim_build; ./WCSim /home/neutrino/in_out_demos/{params.m}; mv /home/neutrino/software/WCSim_build/{params.r} /home/neutrino/in_out_demos/"
+       mv {params.ruta}{params.r}  {output}
+       sudo chmod 666 {output}
+    """
+
+
+
+# Con respecto a VaryE
+rule MAC_to_ROOT_gamma:
+   input:
+      '../../data/1_MAC/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.mac'
+   output:
+      '../../data/2_ROOT/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.root'
+   params:
+      ruta = '../../data/1_MAC/VaryE/gamma/',
+      i = '/home/shared-folder/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.mac',
+      m = 'wcs_MCA_gamma__{l_corrida}_500_MeV.mac',
+      r = 'wcs_MCA_gamma__{l_corrida}_500_MeV.root'
+
+   group: "mygroup"
+   shell:
+    """
+       sudo docker exec -it WCSim_g bash -c "cd /home/neutrino/software; source run.sh; cd /home/neutrino/software/WCSim_build; ./WCSim /home/neutrino/in_out_demos/{params.m}; mv /home/neutrino/software/WCSim_build/{params.r} /home/neutrino/in_out_demos/"
+       mv {params.ruta}{params.r}  {output}
+       sudo chmod 666 {output}
+    """
+
+#      cd /home/neutrino/software; source run.sh; cd $SOFTWARE/WCSim_build; ./WCSim /home/neutrino/in_out_demos/{params.i}; mv /home/neutrino/software/WCSim_build/{params.r} /home/neutrino/in_out_demos
+# -----------------------------------------------------------------------------------------------------
+
+# Con respecto a VaryE -  root to NPZ ROOT_to_event_dump
+rule ROOT_to_event_dump_e:
+   input:
+      '../../data/2_ROOT/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root'
+   output:
+      '../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz'
+   params:
+      ruta = '../../data/2_ROOT/VaryE/e-/',
+      i = '/home/shared-folder/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root',
+      m = 'wcs_MCA_e-__{l_corrida}_500_MeV.root',
+
+      r = 'wcs_MCA_e-__{l_corrida}_500_MeV.npz'
+
+   group: "mygroup"
+
+   shell:
+    """
+       sudo docker exec -it WCSim_2e bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/{params.m} /home/neutrino/in_out_demos"
+       mv {params.ruta}{params.r}  {output}
+       sudo chmod 666 {output}
+    """
+
+
+
+rule ROOT_to_event_dump:
+   input:
+      'event_dump/IWCDgrid_varyR_mu-_200MeV_1000evts_{l_corrida}.npz'
+
+   output:
+      'NPZ_to_image/IMAGES_IWCDgrid_varyR_mu-_200MeV_1000evts_{l_corrida}.npy'
+
+   params:
+      i = '/home/shared-folder/event_dump/IWCDgrid_varyR_mu-_200MeV_1000evts_{l_corrida}.npz'
+
+   group: "mygroup"
+
+   shell:
+    """
+      cd /home/shared-folder/NPZ_to_image
+      python3 /home/Tools_HKM/npz_to_image.py -m /home/shared-folder/Geometry/IWCD_geometry_mPMT.npy -f {params.i}
+
+    """
