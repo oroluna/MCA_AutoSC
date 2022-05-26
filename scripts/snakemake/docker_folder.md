@@ -122,6 +122,94 @@ sudo docker exec -it WCSim_2e bash -c "cd /home/neutrino/software; source run.sh
 
 
 
+# Para gamma
+
+
+
+sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/2_ROOT/VaryE/gamma:/home/neutrino/in_out_demos -d -it --name=WCSim_2g manu33/wcsim:1.2
+
+
+
+
+
+sudo docker exec -it WCSim_2g bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/wcs_MCA_gamma__0_500_MeV.root /home/neutrino/in_out_demos"
+
+
+
+
+
+# Para mu
+
+
+
+sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/2_ROOT/VaryE/mu-:/home/neutrino/in_out_demos -d -it --name=WCSim_2m manu33/wcsim:1.2
+
+
+
+
+
+sudo docker exec -it WCSim_2m bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/wcs_MCA_mu-__0_500_MeV.root /home/neutrino/in_out_demos"
+
+
+
+
+
+____________________________________
+
+
+
+NPZ (EVENT_DUMP) to Image  --3--
+
+____________________________________
+
+
+
+# Para e-
+
+
+
+sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/3_NPZ_event_dump/VaryE/e-:/home/neutrino/in_out_demos -d -it --name=WCSim_3e manu33/wcsim:1.2
+
+
+
+
+
+sudo docker exec -it WCSim_3e bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/wcs_MCA_e-__0_500_MeV.npz /home/neutrino/in_out_demos"
+
+
+
+
+
+# Para gamma
+
+
+
+sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/3_NPZ_event_dump/VaryE/gamma:/home/neutrino/in_out_demos -d -it --name=WCSim_3g manu33/wcsim:1.2
+
+
+
+
+
+sudo docker exec -it WCSim_3g bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/wcs_MCA_gamma__0_500_MeV.npz /home/neutrino/in_out_demos"
+
+
+
+
+
+# Para mu
+
+
+
+sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/3_NPZ_event_dump/VaryE/mu-:/home/neutrino/in_out_demos -d -it --name=WCSim_3m manu33/wcsim:1.2
+
+
+
+
+
+sudo docker exec -it WCSim_3g bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/wcs_MCA_mu-__0_500_MeV.npz /home/neutrino/in_out_demos"
+
+
+
 conda activate snakemake
 
 
