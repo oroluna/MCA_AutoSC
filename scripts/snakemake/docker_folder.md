@@ -53,6 +53,8 @@ Por cada particula una regla
 -----------------
 # Para e-
 
+---   #Para el caso de tener que detenerlo  
+---   #sudo docker stop WCSim_2e; sudo docker rm WCSim_2e  
 sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/2_ROOT/VaryE/e-:/home/neutrino/in_out_demos -d -it --name=WCSim_2e manu33/wcsim:1.2
 
 
