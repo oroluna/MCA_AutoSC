@@ -77,15 +77,15 @@ sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; c
 ### En el proceso 6, utilizar rutina en Python "npz_to_images.py":
 (F-ok)  
 Se tomara como entrada un archivo .NPZ  
-Se espera de salida un archivo .NPZ  (con formato de imagen)  
+Se espera de salida un archivo .NPY  (con formato de imagen)  
 
 **Sintaxis requerida para su ejecución:**
 
-   python3 npz_to_images.py -m <geometry-file-npy> [-f <target-npz-file> | -d <target-directory with npz files>]
+   python3 npz_to_image.py -m <geometry-file-npy> [-f <target-npz-file> | -d <target-directory with npz files>]
 
 **Ejemplo:** 
    
-time python3 /MCA_AutoSC/scripts/python/npz_to_images.py 
+time python3 /MCA_AutoSC/scripts/python/npz_to_image.py 
    -m MCA_AutoSC/data/Geometries/IWCD_geometry_mPMT.npy 
    -f MCA_AutoSC/data/in_out_demos/<Nombre_archivo.npz>
 
