@@ -12,7 +12,21 @@ rule all:
       expand('../../data/1_MAC/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.mac', l_corrida=CORRIDA),
       expand('../../data/2_ROOT/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
       expand('../../data/2_ROOT/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
-      expand('../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA)
+      expand('../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA),
+      expand('../../data/2_ROOT/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
+      expand('../../data/3_NPZ_event_dump/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA),
+      expand('../../data/2_ROOT/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.root', l_corrida=CORRIDA),
+      expand('../../data/3_NPZ_event_dump/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA),
+      expand('../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA),
+      expand('../../data/4_Imagen_NPZ/VaryE/e-/IMAGES_wcs_MCA_e-__{l_corrida}_500_MeV.npy', l_corrida=CORRIDA),
+      expand('../../data/3_NPZ_event_dump/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA),
+      expand('../../data/4_Imagen_NPZ/VaryE/gamma/IMAGES_wcs_MCA_gamma__{l_corrida}_500_MeV.npy', l_corrida=CORRIDA),
+      expand('../../data/3_NPZ_event_dump/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA),
+      expand('../../data/4_Imagen_NPZ/VaryE/mu-/IMAGES_wcs_MCA_mu-__{l_corrida}_500_MeV.npy', l_corrida=CORRIDA)
+
+# -----------------------------------------------------------------------------------------------------
+# MAC_to_ROOT
+# -----------------------------------------------------------------------------------------------------
 
 
 # Con respecto a VaryE
@@ -79,7 +93,8 @@ rule MAC_to_ROOT_gamma:
        sudo chmod 666 {output}
     """
 
-#      cd /home/neutrino/software; source run.sh; cd $SOFTWARE/WCSim_build; ./WCSim /home/neutrino/in_out_demos/{params.i}; mv /home/neutrino/software/WCSim_build/{params.r} /home/neutrino/in_out_demos
+# -----------------------------------------------------------------------------------------------------
+# ROOT_to_event_dump
 # -----------------------------------------------------------------------------------------------------
 
 # Con respecto a VaryE -  root to NPZ ROOT_to_event_dump
@@ -90,13 +105,9 @@ rule ROOT_to_event_dump_e:
       '../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz'
    params:
       ruta = '../../data/2_ROOT/VaryE/e-/',
-      i = '/home/shared-folder/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.root',
       m = 'wcs_MCA_e-__{l_corrida}_500_MeV.root',
-
       r = 'wcs_MCA_e-__{l_corrida}_500_MeV.npz'
-
    group: "mygroup"
-
    shell:
     """
        sudo docker exec -it WCSim_2e bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/{params.m} /home/neutrino/in_out_demos"
@@ -104,23 +115,96 @@ rule ROOT_to_event_dump_e:
        sudo chmod 666 {output}
     """
 
-
-
-rule ROOT_to_event_dump:
+# Con respecto a VaryE -  root to NPZ ROOT_to_event_dump
+rule ROOT_to_event_dump_gamma:
    input:
-      'event_dump/IWCDgrid_varyR_mu-_200MeV_1000evts_{l_corrida}.npz'
-
+      '../../data/2_ROOT/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.root'
    output:
-      'NPZ_to_image/IMAGES_IWCDgrid_varyR_mu-_200MeV_1000evts_{l_corrida}.npy'
-
+      '../../data/3_NPZ_event_dump/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.npz'
    params:
-      i = '/home/shared-folder/event_dump/IWCDgrid_varyR_mu-_200MeV_1000evts_{l_corrida}.npz'
-
+      ruta = '../../data/2_ROOT/VaryE/gamma/',
+      m = 'wcs_MCA_gamma__{l_corrida}_500_MeV.root',
+      r = 'wcs_MCA_gamma__{l_corrida}_500_MeV.npz'
    group: "mygroup"
-
    shell:
     """
-      cd /home/shared-folder/NPZ_to_image
-      python3 /home/Tools_HKM/npz_to_image.py -m /home/shared-folder/Geometry/IWCD_geometry_mPMT.npy -f {params.i}
+       sudo docker exec -it WCSim_2g bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/{params.m} /home/neutrino/in_out_demos"
+       mv {params.ruta}{params.r} {output}
+       sudo chmod 666 {output}
+    """
 
+# Con respecto a VaryE -  root to NPZ ROOT_to_event_dump
+rule ROOT_to_event_dump_mu:
+   input:
+      '../../data/2_ROOT/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.root'
+   output:
+      '../../data/3_NPZ_event_dump/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.npz'
+   params:
+      ruta = '../../data/2_ROOT/VaryE/mu-/',
+      m = 'wcs_MCA_mu-__{l_corrida}_500_MeV.root',
+      r = 'wcs_MCA_mu-__{l_corrida}_500_MeV.npz'
+   group: "mygroup"
+   shell:
+    """
+       sudo docker exec -it WCSim_2m bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/{params.m} /home/neutrino/in_out_demos"
+       mv {params.ruta}{params.r} {output}
+       sudo chmod 666 {output}
+    """
+
+# -----------------------------------------------------------------------------------------------------
+# NPZ_to_image
+# -----------------------------------------------------------------------------------------------------
+
+# Con respecto a VaryE -  NPZ (Event Dump) to IMAGE
+rule NPZ_to_image_e:
+   input:
+      '../../data/3_NPZ_event_dump/VaryE/e-/wcs_MCA_e-__{l_corrida}_500_MeV.npz'
+   output:
+      '../../data/4_Imagen_NPZ/VaryE/e-/IMAGES_wcs_MCA_e-__{l_corrida}_500_MeV.npy'
+   params:
+      ruta = '../../data/3_NPZ_event_dump/VaryE/e-/',
+      m = 'wcs_MCA_e-__{l_corrida}_500_MeV.npz',
+      r = 'IMAGES_wcs_MCA_e-__{l_corrida}_500_MeV.npy'
+   group: "mygroup"
+   shell:
+    """
+       time python3 ../../scripts/python/npz_to_image.py -m ../../data/Geometries/IWCD_geometry_mPMT.npy -f {input}
+       mv {params.r}  {output}
+       sudo chmod 666 {output}
+    """
+
+# Con respecto a VaryE -  NPZ (Event Dump) to IMAGE
+rule NPZ_to_image_gamma:
+   input:
+      '../../data/3_NPZ_event_dump/VaryE/gamma/wcs_MCA_gamma__{l_corrida}_500_MeV.npz'
+   output:
+      '../../data/4_Imagen_NPZ/VaryE/gamma/IMAGES_wcs_MCA_gamma__{l_corrida}_500_MeV.npy'
+   params:
+      ruta = '../../data/3_NPZ_event_dump/VaryE/gamma/',
+      m = 'wcs_MCA_gamma__{l_corrida}_500_MeV.npz',
+      r = 'IMAGES_wcs_MCA_gamma__{l_corrida}_500_MeV.npy'
+   group: "mygroup"
+   shell:
+    """
+       time python3 ../../scripts/python/npz_to_image.py -m ../../data/Geometries/IWCD_geometry_mPMT.npy -f {input}
+       mv {params.r}  {output}
+       sudo chmod 666 {output}
+    """
+
+# Con respecto a VaryE -  NPZ (Event Dump) to IMAGE
+rule NPZ_to_image_m:
+   input:
+      '../../data/3_NPZ_event_dump/VaryE/mu-/wcs_MCA_mu-__{l_corrida}_500_MeV.npz'
+   output:
+      '../../data/4_Imagen_NPZ/VaryE/mu-/IMAGES_wcs_MCA_mu-__{l_corrida}_500_MeV.npy'
+   params:
+      ruta = '../../data/3_NPZ_event_dump/VaryE/mu-/',
+      m = 'wcs_MCA_mu-__{l_corrida}_500_MeV.npz',
+      r = 'IMAGES_wcs_MCA_mu-__{l_corrida}_500_MeV.npy'
+   group: "mygroup"
+   shell:
+    """
+       time python3 ../../scripts/python/npz_to_image.py -m ../../data/Geometries/IWCD_geometry_mPMT.npy -f {input}
+       mv {params.r}  {output}
+       sudo chmod 666 {output}
     """
