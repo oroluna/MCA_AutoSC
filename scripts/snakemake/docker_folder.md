@@ -1,6 +1,8 @@
 
 
 
+
+
 sudo docker stop WCSim
 sudo docker rm WCSim
 
@@ -174,3 +176,15 @@ sudo docker exec -it WCSim_4g bash -c "cd /home/neutrino/software; source run.sh
 sudo docker run -v /home/autosc/Documents/MCA_AutoSC/data/2_ROOT/VaryE/mu-:/home/neutrino/in_out_demos -d -it --name=WCSim_4m manu33/wcsim:1.2
 
 sudo docker exec -it WCSim_4m bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump_barrel.py /home/neutrino/in_out_demos/wcs_MCA_mu-__0_500_MeV.root /home/neutrino/in_out_demos"
+
+
+## Para obtener reporte
+#snakemake  --reporte
+
+
+## Para obtener visualizacion
+#snakemake  --dag | dot -Tpdf > dag.pdf
+
+
+## Para obtener visualizacion
+#snakemake  --rulegraph | dot -Tpdf > rulegraph.pdf
