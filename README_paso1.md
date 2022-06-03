@@ -121,10 +121,11 @@ sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; c
 ```
 ---  
 
-### En el proceso 9, para utilizar el contenedor es:  
+### En el proceso 9:  
 (F)  
-Se tomará como entrada un conjunto de archivos .NPZ  
-Se espera de salidas de archivo .H5  
+Se tomará como entrada un archivo .NPZ  (*Creado en el proceso 5*)
+ 
+Se espera de salida un archivo .H5  
 ```
 python3 np_to_digihit_array_hdf5_FJOL.py <ruta-maquina-local>/MCA_AutoSC-main/data/in_out_demos/<nombre_archivo_entrada>.npz -o <nombre_archivo_salida>.h5
 ```
@@ -132,9 +133,9 @@ Ubicación del script: MCA_AutoSC/scripts/python/
 
 ---  
 
-### En el proceso 10, para utilizar el contenedor es:  
+### En el proceso 10:  
 (F)  
-Se tomarán como entrada varios archivo .H5  
+Se tomarán como entrada un conjunto de archivos .H5  
 Se espera de salida un archivo .ipynb  
 ```
 python3 merge_h5.py <nombre_archivo1>.h5 <nombre_archivo2>.h5 <nombre_archivoN>.h5 -o <nombre_archivo_salida>.ipynb
