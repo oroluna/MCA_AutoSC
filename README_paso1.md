@@ -125,6 +125,9 @@ sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; c
 (F)  
 Se tomara como entrada un conjunto de archivos .NPZ  
 Se espera de salidas de archivo .H5  
+```
+python3 np_to_digihit_array_hdf5_FJOL.py <ruta-maquina-local>/MCA_AutoSC-main/data/in_out_demos/<nombre_archivo_entrada>.npz -o <nombre_archivo_salida>.h5
+```
 
 ---  
 
