@@ -49,7 +49,7 @@ sudo docker run -v < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos:/hom
 ### En el proceso 4, para utilizar el contenedor para ejecutar herramienta WCSim:
 (M)
 
-Se tomara como entrada un archivo .MAC  
+Se tomará como entrada un archivo .MAC  
 Se espera de salida un archivo .ROOT  
 
 Ejecución WCSim:
@@ -112,7 +112,7 @@ MCA_AutoSC/scripts/notebook/Analisis_e-.ipynb
 
 ### En el proceso 8, para utilizar el contenedor de WCSim y mandar llamar la rutina en python dentro del contenedor:  
 (M)  
-Se tomara como entrada un archivo .ROOT  
+Se tomará como entrada un archivo .ROOT  
 Se espera de salida un archivo .NPZ  
 
 Rutina de python ejecutada: **event_dump_barrel.py** 
@@ -123,7 +123,7 @@ sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; c
 
 ### En el proceso 9, para utilizar el contenedor es:  
 (F)  
-Se tomara como entrada un conjunto de archivos .NPZ  
+Se tomará como entrada un conjunto de archivos .NPZ  
 Se espera de salidas de archivo .H5  
 ```
 python3 np_to_digihit_array_hdf5_FJOL.py <ruta-maquina-local>/MCA_AutoSC-main/data/in_out_demos/<nombre_archivo_entrada>.npz -o <nombre_archivo_salida>.h5
@@ -134,5 +134,9 @@ Ubicación del script: MCA_AutoSC/scripts/python/
 
 ### En el proceso 10, para utilizar el contenedor es:  
 (F)  
-Se tomara como entrada un archivo .H5  
+Se tomarán como entrada varios archivo .H5  
 Se espera de salida un archivo .ipynb  
+```
+python3 merge_h5.py <nombre_archivo1>.h5 <nombre_archivo2>.h5 <nombre_archivoN>.h5 -o <nombre_archivo_salida>.ipynb
+```
+ Ubicación del script: MCA_AutoSC/scripts/python/
