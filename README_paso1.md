@@ -128,6 +128,7 @@ Se espera de salidas de archivo .H5
 ```
 python3 np_to_digihit_array_hdf5_FJOL.py <ruta-maquina-local>/MCA_AutoSC-main/data/in_out_demos/<nombre_archivo_entrada>.npz -o <nombre_archivo_salida>.h5
 ```
+Ubicación del script: MCA_AutoSC/scripts/python/
 
 ---  
 
