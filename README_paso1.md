@@ -136,8 +136,8 @@ Ubicación del script: MCA_AutoSC/scripts/python/
 ### En el proceso 10:  
 (F)  
 Se tomarán como entrada un conjunto de archivos .H5  
-Se espera de salida un archivo .ipynb  
+Se espera de salida un archivo .H5  
 ```
-python3 merge_h5.py <nombre_archivo1>.h5 <nombre_archivo2>.h5 <nombre_archivoN>.h5 -o <nombre_archivo_salida>.ipynb
+python3 merge_h5.py <nombre_archivo1>.h5 <nombre_archivo2>.h5 <nombre_archivoN>.h5 -o <nombre_archivo_salida>.h5
 ```
  Ubicación del script: MCA_AutoSC/scripts/python/
