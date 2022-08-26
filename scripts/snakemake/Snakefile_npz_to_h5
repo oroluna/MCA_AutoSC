@@ -1,0 +1,44 @@
+#Snakefile para creacion de .H5
+#Ultima actualizacion 1 julio 22
+
+CORRIDA = range(0,1000)
+PARTICULA = ["e-"]
+#PARTICULA = ["gamma","e-","mu-"]
+VARIACION = ["VaryE"]
+
+rule all:
+   input:
+      expand('../../data/3_NPZ_event_dump/{l_variacion}/{l_particula}/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA, l_particula=PARTICULA,l_variacion=VARIACION),
+      expand('../../data/3_NPZ_event_dump/{l_variacion}/{l_particula}/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.npz', l_corrida=CORRIDA, l_particula=PARTICULA,l_variacion=VARIACION),
+      expand('../../data/6_HD5/{l_variacion}/{l_particula}/digihit/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.h5', l_corrida=CORRIDA, l_particula=PARTICULA,l_variacion=VARIACION),
+      expand('../../data/6_HD5/{l_variacion}/{l_particula}/truehit/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.h5', l_corrida=CORRIDA, l_particula=PARTICULA,l_variacion=VARIACION)
+
+# -----------------------------------------------------------------------------------------------------
+# NPZ_to_H5_digithit
+# -----------------------------------------------------------------------------------------------------
+
+rule NPZ_to_H5_digithit:
+   input:
+      '../../data/3_NPZ_event_dump/{l_variacion}/{l_particula}/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.npz'
+   output:
+      '../../data/6_HD5/{l_variacion}/{l_particula}/digihit/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.h5'
+
+   shell:
+    """
+       python3 ../../scripts/python/np_to_digihit_array_hdf5_FJOL.py {input} -o {output}
+    """
+
+# -----------------------------------------------------------------------------------------------------
+# NPZ_to_H5_truehit
+# -----------------------------------------------------------------------------------------------------
+
+rule NPZ_to_H5_truehit:
+    input:
+      '../../data/3_NPZ_event_dump/{l_variacion}/{l_particula}/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.npz'
+    output:
+      '../../data/6_HD5/{l_variacion}/{l_particula}/truehit/wcs_MCA_{l_particula}__{l_corrida}_500_MeV.h5'
+
+    shell:
+      """
+        python3 ../../scripts/python/np_to_truehit_array_hdf5_FJOL.py {input} -o {output}
+      """
