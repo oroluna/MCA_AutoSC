@@ -97,7 +97,7 @@ Se tomara como entrada un archivo .ROOT
 Se espera de salida un archivo .NPZ  
 Rutina de python ejecutada: **event_dump.py** 
 ```
-sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/wcs_MCA_e-__0_500_MeV.root /home/neutrino/in_out_demos"
+sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; cd /home/WatChMal/DataTools; time python3 event_dump.py /home/neutrino/in_out_demos/<Nombre de archivo>.root /home/neutrino/in_out_demos"
 ```
 
 
