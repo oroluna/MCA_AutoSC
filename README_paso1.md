@@ -30,11 +30,16 @@ Descargar el ZIP del repositorio de GitHub.
 ## Ejemplo de procesamiento individuales de 
 
 En el Proceso 3 utilizar el siguiente comando  
+Ir a la carpeta: Crear_MAC.
 (Es necesario revisar la documentación correspondiente)  
 
 ```
 python3 mac_files_config.py -i 100 -d ../data/in_out_demos  
 ``` 
+
+Para el caso de procesamiento por particula ejecutar lo siguiente, dentro del directorio Crear_MAC   
+    python3 mac_files_config.py --config_json config_e.json -d /home/forozco/MCA_AutoSC/data/1_MAC/VaryE/e- -i 25  
+
 ---  
 Para los procesos 4, 5 y 8 descargar la [imagen WCSim](https://hub.docker.com/r/manu33/wcsim "manu33/wcsim") de Docker Hub:
 
