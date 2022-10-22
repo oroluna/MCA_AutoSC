@@ -1,10 +1,10 @@
 Prerequisitos
 
-Tener instalado docker
-Tener instalado anaconda navigator
-Tener instalado GIT
-Tener instalado ATOM
-Tener instalado 
+Tener instalado docker  
+Tener instalado anaconda navigator  
+Tener instalado GIT  
+Tener instalado ATOM  
+Tener instalado   
 
 
 # MCA_AutoSC
