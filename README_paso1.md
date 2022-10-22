@@ -114,14 +114,12 @@ Se espera de salida un archivo .NPY  (con formato de imagen)
 
 **Ejemplo:** 
    
-time python3 /MCA_AutoSC/scripts/python/npz_to_image.py 
-   -m MCA_AutoSC/data/Geometries/IWCD_geometry_mPMT.npy 
-   -f MCA_AutoSC/data/in_out_demos/<Nombre_archivo.npz>
-
-  
-  
-Ubicación del script:                MCA_AutoSC/scripts/python/  
-Ubicación del archivo de geometria:  MCA_AutoSC/data/Geometries/
+time python3 <ruta_usuario>/MCA_AutoSC/scripts/python/npz_to_image.py 
+   -m <ruta_usuario>/MCA_AutoSC/data/Geometries/IWCD_geometry_mPMT.npy 
+   -f <ruta_usuario>/MCA_AutoSC/data/in_out_demos/<Nombre_archivo.npz>
+        
+Ubicación del script:                <ruta_usuario>/MCA_AutoSC/scripts/python/  
+Ubicación del archivo de geometria:  <ruta_usuario>/MCA_AutoSC/data/Geometries/
 
 
 ---  
