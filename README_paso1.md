@@ -97,12 +97,14 @@ Se tomara como entrada un archivo .ROOT
 Se espera de salida un archivo .NPZ  
 
 ## Nota: Para el caso de ser instalación de primera vez.  
+(POR CORREGIR, HACER USO DE UNA HERRAMIENTAS PARA AMBIENTE VIRTUAL)
 Considerar instalar     
-numpy  $ pip install numpy  
-pandas $ pip install pandas  
+
+numpy  $ pip3 install numpy  
+pandas $ pip3 install pandas  
 matplotlib  
-   python -m pip install -U pip  
-   python -m pip install -U matplotlib   
+   python -m pip3 install -U pip  
+   python -m pip3 install -U matplotlib   
 
 Rutina de python ejecutada: **event_dump.py** 
 ```
