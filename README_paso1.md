@@ -3,9 +3,11 @@
 Tener instalado docker  
 Crear o tener a la mano cuenta de docker / docker hub
 Tener instalado anaconda navigator  
-Tener instalado GIT  
+Tener instalado GIT  -  Se puede revisar si esta instalado y su version con:   
+   $ git --version   
 Tener instalado ATOM u Otro editor de Texto  
-Tener instalado la app Htop:  sudo apt install htop  
+Tener instalado la app Htop:  
+   $ sudo apt install htop   
 
 
 # MCA_AutoSC
