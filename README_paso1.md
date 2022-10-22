@@ -4,7 +4,7 @@ Tener instalado docker
 Crear o tener a la mano cuenta de docker / docker hub
 Tener instalado anaconda navigator  
 Tener instalado GIT  
-Tener instalado ATOM  
+Tener instalado ATOM u Otro editor de Texto  
 Tener instalado   
 
 
