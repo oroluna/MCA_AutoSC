@@ -38,8 +38,12 @@ python3 mac_files_config.py -i 100 -d ../data/in_out_demos
 ``` 
 
 Para el caso de procesamiento por particula ejecutar lo siguiente, dentro del directorio Crear_MAC   
-    python3 mac_files_config.py --config_json config_e.json -d /home/forozco/MCA_AutoSC/data/1_MAC/VaryE/e- -i 25  
 
+```
+python3 mac_files_config.py --config_json config_e.json -d /home/forozco/MCA_AutoSC/data/1_MAC/VaryE/e- -i 25  
+python3 mac_files_config.py --config_json config_mu.json -d /home/forozco/MCA_AutoSC/data/1_MAC/VaryE/mu- -i 25  
+python3 mac_files_config.py --config_json config_gamma.json -d /home/forozco/MCA_AutoSC/data/1_MAC/VaryE/gamma -i 25  
+```
 ---  
 Para los procesos 4, 5 y 8 descargar la [imagen WCSim](https://hub.docker.com/r/manu33/wcsim "manu33/wcsim") de Docker Hub:
 
