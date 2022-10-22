@@ -2,6 +2,9 @@ Para unirte a la videollamada, haz clic en este enlace: https://meet.google.com/
 Si quieres unirte por teléfono, llama al +52 55 8421 0898 e introduce este PIN: 302 406 465 5513#
 Para ver más números de teléfono, haz clic en este enlace: https://tel.meet/rvc-butp-tfo?hs=5
 
+
+
+
 # Prerequisitos
 
 
