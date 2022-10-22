@@ -1,3 +1,12 @@
+Prerequisitos
+
+Tener instalado docker
+Tener instalado anaconda navigator
+Tener instalado GIT
+Tener instalado ATOM
+Tener instalado 
+
+
 # MCA_AutoSC
 Automatización utilizando supercómputo
 
@@ -7,7 +16,7 @@ Descargar el ZIP del repositorio de GitHub.
 
 ---  
 
-## Ejemplo de procesamiento indivuales de 
+## Ejemplo de procesamiento individuales de 
 
 En el Proceso 3 utilizar el siguiente comando  
 (Es necesario revisar la documentación correspondiente)  
