@@ -66,12 +66,12 @@ Y aparecerá algo como:
 ![images](/Imagenes/sudoDockerImages.png "sudoDockerImages")
 
 Ruta de la carpeta a vincular con los archivos .mac: 
-* MCA_AutoSC-main/data/in_out_demos
+* MCA_AutoSC/data/in_out_demos (Es importante verificar que el nombre del proyecto GIT, sea el mismo "MCA_AutoSC" porque se estara referenciando varias veces)
 
 Creación del contenedor y vinculacion de la carpeta:
 
 ```
-sudo docker run -v < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos:/home/neutrino/in_out_demos -d -it --name=WCSim manu33/wcsim:1.2 
+sudo docker run -v < ruta-maquina-local >/MCA_AutoSC/data/in_out_demos:/home/neutrino/in_out_demos -d -it --name=WCSim manu33/wcsim:1.2 
 ```
 ---
 
@@ -87,7 +87,7 @@ Cambiar el archivo.mac y archivo.root por su nombre correspondiente, por ejemplo
 ```
 sudo docker exec -it WCSim bash -c "cd /home/neutrino/software; source run.sh; cd $SOFTWARE/WCSim_build; ./WCSim /home/neutrino/in_out_demos/<archivo>.mac; mv /home/neutrino/software/WCSim_build/<archivo>.root /home/neutrino/in_out_demos"
 ```
-Visualizar archivo .root en la siguiente ruta: < ruta-maquina-local >/MCA_AutoSC-main/data/in_out_demos
+Visualizar archivo .root en la siguiente ruta: < ruta-maquina-local >/MCA_AutoSC/data/in_out_demos
 
 ---  
 
