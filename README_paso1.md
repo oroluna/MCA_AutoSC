@@ -5,7 +5,7 @@ Crear o tener a la mano cuenta de docker / docker hub
 Tener instalado anaconda navigator  
 Tener instalado GIT  
 Tener instalado ATOM u Otro editor de Texto  
-Tener instalado   
+Tener instalado la app Htop:  sudo apt install htop  
 
 
 # MCA_AutoSC
