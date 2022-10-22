@@ -1,6 +1,7 @@
-Prerequisitos
+# Prerequisitos
 
 Tener instalado docker  
+Crear o tener a la mano cuenta de docker / docker hub
 Tener instalado anaconda navigator  
 Tener instalado GIT  
 Tener instalado ATOM  
