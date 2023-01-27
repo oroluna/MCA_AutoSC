@@ -62,3 +62,5 @@ Ubicacion de los archivos procesados localmente:
 
 
 ##Ubicacion de los archivos compartidos CLUSTER
+/shared/home/HK_Mx
+
